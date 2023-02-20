@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script defer src="theme.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+  <script src="https://kit.fontawesome.com/a579852eae.js" crossorigin="anonymous"></script>
+</head>
+
+<style>
+  html{
+  scroll-behavior: smooth;
+}
+
+:root {
+  font-size: 16px;
+  font-family: 'Open Sans';
+  --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --bg-primary: #23232e;
+  --bg-secondary: #141418;
+  --transition-speed: 600ms;
+}
+
+
+
+body {
+  overflow-x: hidden;
+  color: black;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #6649b8;
+}
+
+
+.navbar {
+  position: fixed;
+  background-color: var(--bg-primary);
+  transition: width 600ms ease;
+  overflow: scroll;
+}
+.navbar::-webkit-scrollbar{
+  display: none;
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 90%;
+}
+
+.nav-item {
+
+  width: 100%;
+}
+
+/* .nav-item:last-child {
+  margin-top: auto;
+} */
+
+.nav-social{
+  display: flex;
+  
+
+}
+
+.header-nav__social{
+  list-style: none;
+  display: flex;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  filter: grayscale(100%) opacity(0.7);
+  transition: var(--transition-speed);
+}
+
+.nav-link:hover {
+  filter: grayscale(0%) opacity(1);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+}
+
+.link-text {
+  display: none;
+  margin-left: 1rem;
+  align-items: center;
+}
+
+.nav-link svg {
+  width: 2rem;
+  min-width: 2rem;
+  margin: 0 1.5rem;
+}
+
+.fa-primary {
+  color: #ff7eee;
+}
+
+.fa-secondary {
+  color: #df49a6;
+}
+
+.fa-primary,
+.fa-secondary {
+  transition: var(--transition-speed);
+}
+
+.logo {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  font-size: 1.5rem;
+  letter-spacing: 0.3ch;
+  width: 100%;
+}
+
+.logo svg {
+  transform: rotate(0deg);
+  transition: var(--transition-speed);
+}
+
+.logo-text
+{
+  font-size: 17px;
+  display: inline;
+  position: absolute;
+  left: -999px;
+  transition: var(--transition-speed);
+}
+
+.navbar:hover .logo svg {
+  transform: rotate(-180deg);
+}
+
+/* Small screens */
+@media only screen and (max-width: 600px) {
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+  }
+
+  .nav-link {
+    justify-content: center;
+  }
+
+  main {
+    margin: 0;
+  }
+}
+
+/* Large screens */
+@media only screen and (min-width: 600px) {
+  .navbar {
+    top: 0;
+    width: 5rem;
+    height: 100vh;
+  }
+
+  .navbar:hover {
+    width: 16rem;
+  }
+
+  .navbar:hover .link-text {
+    display: inline;
+  }
+
+  .navbar:hover .logo svg
+  {
+    margin-left: 11rem;
+  }
+
+  .navbar:hover .logo-text
+  {
+    left: 0px;
+  }
+}
+
+.dark {
+  --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --bg-primary: #23232e;
+  --bg-secondary: #141418;
+}
+
+.light {
+  --text-primary: #1f1f1f;
+  --text-secondary: #000000;
+  --bg-primary: #ffffff;
+  --bg-secondary: #e4e4e4;
+}
+
+.solar {
+  --text-primary: #576e75;
+  --text-secondary: #35535c;
+  --bg-primary: #fdf6e3;
+  --bg-secondary: #f5e5b8;
+}
+
+.theme-icon {
+  display: none;
+}
+
+.dark #darkIcon {
+  display: block;
+}
+
+.light #lightIcon {
+  display: block;
+}
+
+.solar #solarIcon {
+  display: block;
+}
+
+:root {
+  font-size: 16px;
+  font-family: 'Open Sans';
+  --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --bg-primary: #23232e;
+  --bg-secondary: #141418;
+  --transition-speed: 600ms;
+}
+
+body {
+  color: black;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #6649b8;
+}
+
+main {
+  margin-left: 3rem;
+  padding: 0rem;
+}
+
+.navbar {
+  position: fixed;
+  background-color: var(--bg-primary);
+  transition: width 600ms ease;
+  overflow: scroll;
+}
+.navbar::-webkit-scrollbar{
+  display: none;
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 90%;
+}
+
+.nav-item {
+
+  width: 100%;
+}
+
+/* .nav-item:last-child {
+  margin-top: auto;
+} */
+
+.nav-social{
+  display: flex;
+  
+
+}
+
+.header-nav__social{
+  list-style: none;
+  display: flex;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  filter: grayscale(100%) opacity(0.7);
+  transition: var(--transition-speed);
+}
+
+.nav-link:hover {
+  filter: grayscale(0%) opacity(1);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+}
+
+.link-text {
+  display: none;
+  margin-left: 1rem;
+  align-items: center;
+}
+
+.nav-link svg {
+  width: 2rem;
+  min-width: 2rem;
+  margin: 0 1.5rem;
+}
+
+.fa-primary {
+  color: #ff7eee;
+}
+
+.fa-secondary {
+  color: #df49a6;
+}
+
+.fa-primary,
+.fa-secondary {
+  transition: var(--transition-speed);
+}
+
+.logo {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  font-size: 1.5rem;
+  letter-spacing: 0.3ch;
+  width: 100%;
+}
+
+.logo svg {
+  transform: rotate(0deg);
+  transition: var(--transition-speed);
+}
+
+.logo-text
+{
+  font-size: 17px;
+  display: inline;
+  position: absolute;
+  left: -999px;
+  transition: var(--transition-speed);
+}
+
+.navbar:hover .logo svg {
+  transform: rotate(-180deg);
+}
+
+/* Small screens */
+@media only screen and (max-width: 600px) {
+  .navbar {
+    bottom: -1px;
+    width: 100%;
+    height: 5rem;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+  }
+
+  .nav-link {
+    justify-content: center;
+  }
+
+  main {
+    margin: 0;
+  }
+}
+
+/* Large screens */
+@media only screen and (min-width: 600px) {
+  .navbar {
+    top: 0;
+    width: 5rem;
+    height: -webkit-fill-available;
+  }
+
+  .navbar:hover {
+    height: -webkit-fill-available;;
+    width: 16rem;
+  }
+
+  .navbar:hover .link-text {
+    display: inline;
+  }
+
+  .navbar:hover .logo svg
+  {
+    margin-left: 11rem;
+  }
+
+  .navbar:hover .logo-text
+  {
+    left: 0px;
+  }
+}
+
+.dark {
+  --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --bg-primary: #23232e;
+  --bg-secondary: #141418;
+}
+
+.light {
+  --text-primary: #1f1f1f;
+  --text-secondary: #000000;
+  --bg-primary: #ffffff;
+  --bg-secondary: #e4e4e4;
+}
+
+.solar {
+  --text-primary: #576e75;
+  --text-secondary: #35535c;
+  --bg-primary: #fdf6e3;
+  --bg-secondary: #f5e5b8;
+}
+
+.theme-icon {
+  display: none;
+}
+
+.dark #darkIcon {
+  display: block;
+}
+
+.light #lightIcon {
+  display: block;
+}
+
+.solar #solarIcon {
+  display: block;
+}
+
+/* SECTIONS START HERE */
+
+
+
+.first-section {
+  margin-left: 32px;
+  width: auto;
+  height: 100vh;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.first-section-left {
+  width: 100%;
+  height: 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: lightgray;
+  /* background-color: black; */
+  padding: 2rem;
+}
+
+.first-section-left > h2 {
+  text-shadow: 0 0 10px #00b3ff,
+  0 0 10px #00b3ff,
+  0 0 20px #00b3ff,
+  0 0 30px #00b3ff,
+  0 0 40px #00b3ff;
+  
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 300px;
+}
+
+.first-section-left > h4 {
+  text-shadow: 0 0 10px #00b3ff,
+  0 0 10px #00b3ff,
+  0 0 20px #00b3ff,
+  0 0 30px #00b3ff,
+  0 0 40px #00b3ff;
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 0px;
+}
+
+.first-section-right {
+  /* padding: 2em; */
+  width: 50vw;
+  height: 103%;
+
+  /* background: linear-gradient(to right, rgb(0, 0, 0), rgba(0, 0, 0, 0)); */
+
+}
+
+.back-video{
+  position: absolute;
+  right: -149px;
+  bottom: 0;
+  z-index: -1;
+}
+
+
+@media screen and (max-width: 600px) {
+  .first-section {
+    margin-left: 32px;
+    width: auto;
+    height: calc(101vh - 50px);
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .first-section-left > h2 {
+    margin-top: 300px;
+  }
+
+
+  .first-section-left {
+    width: 350%;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: lightgray;
+    /* background-color: black; */
+    padding: 2rem;
+  }
+
+}
+
+
+/* second sectionss */
+
+.second-section {
+  width: 106.11vw;
+  height: 109vh;
+  color: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background-color: black;
+
+}
+
+.second-section-left {
+  width: 50vw;
+  height: 109vh;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to left, rgb(0, 0, 0), rgba(0, 0, 0, 0)),
+    url("https://i0.wp.com/roboticsindia.live/wp-content/uploads/2021/08/robo2.jpg?fit=1920%2C1080&ssl=1");
+  background-size: cover;
+  background-position: center;
+}
+
+.second-section-right {
+  width: 50vw;
+  height: 100vh;
+  margin-right: 125px;
+  margin-top: -700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.second-section-right > h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 100vh;
+}
+
+.second-section-right > h4 {
+  font-size: 22px;
+  text-align: left;
+  margin-top: 0px;
+}
+
+
+@media screen and (max-width: 600px) {
+  .second-section {
+    margin-top: 420px;
+    width: 44.8em;
+    height: 57em;
+    flex-direction: column;
+    padding: 0rem;
+  }
+
+  .second-section-left {
+    margin-top: -78em;
+    width: 126vw;
+    height: 66vh;
+    background-image: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0)),
+      url("https://i0.wp.com/roboticsindia.live/wp-content/uploads/2021/08/robo2.jpg?fit=1920%2C1080&ssl=1");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .second-section-right {
+    width: 100vw;
+    height: 50vh;
+    padding: 2rem;
+  }
+
+  .second-section-right > h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 150vh;
+  }
+}
+</style>
+
+<body>
+  <nav class="navbar">
+    <ul class="navbar-nav">
+      <li class="logo">
+        <a href="#" class="nav-link">
+          <span class="link-text logo-text">Robo-Fiesta</span>
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            data-prefix="fad"
+            data-icon="angle-double-right"
+            role="img"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"
+            class="svg-inline--fa fa-angle-double-right fa-w-14 fa-5x"
+          >
+            <g class="fa-group">
+              <path
+                fill="currentColor"
+                d="M224 273L88.37 409a23.78 23.78 0 0 1-33.8 0L32 386.36a23.94 23.94 0 0 1 0-33.89l96.13-96.37L32 159.73a23.94 23.94 0 0 1 0-33.89l22.44-22.79a23.78 23.78 0 0 1 33.8 0L223.88 239a23.94 23.94 0 0 1 .1 34z"
+                class="fa-secondary"
+              ></path>
+              <path
+                fill="currentColor"
+                d="M415.89 273L280.34 409a23.77 23.77 0 0 1-33.79 0L224 386.26a23.94 23.94 0 0 1 0-33.89L320.11 256l-96-96.47a23.94 23.94 0 0 1 0-33.89l22.52-22.59a23.77 23.77 0 0 1 33.79 0L416 239a24 24 0 0 1-.11 34z"
+                class="fa-primary"
+              ></path>
+            </g>
+          </svg>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="#1st-section" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 0 24 24"><path fill="#59595c" d="M12 3s-6.186 5.34-9.643 8.232A1.041 1.041 0 0 0 2 12a1 1 0 0 0 1 1h2v7a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-4h4v4a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-7h2a1 1 0 0 0 1-1a.98.98 0 0 0-.383-.768C18.184 8.34 12 3 12 3z"/></svg>
+          <span class="link-text">Home</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="#2nd-section" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 0 24 24"><path fill="#49494c" d="M13 9h-2V7h2m0 10h-2v-6h2m-1-9A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"/></svg>
+          <span class="link-text">About Us</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 2.4 24 24"><path fill="#49494c" d="M10.95 20.75L7.4 17.2l1.45-1.45l2.1 2.1l4.2-4.2l1.45 1.45l-5.65 5.65ZM5 24.4q-.825 0-1.413-.587T3 22.4v-14q0-.825.588-1.413T5 6.4h1v-2h2v2h8v-2h2v2h1q.825 0 1.413.588T21 8.4v14q0 .825-.588 1.413T19 24.4H5Zm0-2h14v-10H5v10Z"/></svg>
+          <span class="link-text">Events</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 0 16 16"><path fill="#49494c" d="M10.586 1C12.268 1 13.5 2.37 13.5 4.25c0 1.745-.996 3.359-2.622 4.831c-.166.15-.336.297-.509.438l1.116 5.584a.75.75 0 0 1-.991.852l-2.409-.876a.25.25 0 0 0-.17 0l-2.409.876a.75.75 0 0 1-.991-.852L5.63 9.519a13.78 13.78 0 0 1-.51-.438C3.497 7.609 2.5 5.995 2.5 4.25C2.5 2.37 3.732 1 5.414 1c.963 0 1.843.403 2.474 1.073L8 2.198l.112-.125a3.385 3.385 0 0 1 2.283-1.068L10.586 1Zm-3.621 9.495l-.718 3.594l1.155-.42a1.75 1.75 0 0 1 1.028-.051l.168.051l1.154.42l-.718-3.592c-.199.13-.37.235-.505.314l-.169.097a.75.75 0 0 1-.72 0a9.54 9.54 0 0 1-.515-.308l-.16-.105ZM10.586 2.5c-.863 0-1.611.58-1.866 1.459c-.209.721-1.231.721-1.44 0C7.025 3.08 6.277 2.5 5.414 2.5C4.598 2.5 4 3.165 4 4.25c0 1.23.786 2.504 2.128 3.719c.49.443 1.018.846 1.546 1.198l.325.21l.076-.047l.251-.163a13.341 13.341 0 0 0 1.546-1.198C11.214 6.754 12 5.479 12 4.25c0-1.085-.598-1.75-1.414-1.75Z"/></svg>
+          <span class="link-text">Sponsors</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 0 24 24"><path fill="#49494c" d="M12 11a5 5 0 0 1 5 5v6H7v-6a5 5 0 0 1 5-5zm-6.712 3.006a6.983 6.983 0 0 0-.28 1.65L5 16v6H2v-4.5a3.5 3.5 0 0 1 3.119-3.48l.17-.014zm13.424 0A3.501 3.501 0 0 1 22 17.5V22h-3v-6c0-.693-.1-1.362-.288-1.994zM5.5 8a2.5 2.5 0 1 1 0 5a2.5 2.5 0 0 1 0-5zm13 0a2.5 2.5 0 1 1 0 5a2.5 2.5 0 0 1 0-5zM12 2a4 4 0 1 1 0 8a4 4 0 0 1 0-8z"/></svg>
+          <span class="link-text">Team</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 2.4 24 24"><path fill="#49494c" d="M19.95 23.4q-3.225 0-6.287-1.437t-5.425-3.8q-2.363-2.363-3.8-5.425T3 6.45q0-.45.3-.75t.75-.3H8.1q.35 0 .625.225t.325.575l.65 3.5q.05.35-.013.638t-.287.512L7 13.3q1.05 1.8 2.625 3.375T13.1 19.4l2.35-2.35q.225-.225.588-.338t.712-.062l3.45.7q.35.075.575.338T21 18.3v4.05q0 .45-.3.75t-.75.3Z"/></svg>
+          <span class="link-text">Contact</span>
+        </a>
+      </li>
+
+
+    </ul>
+
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 0 24 24"><path fill="#49494c" d="M15 14c-2.67 0-8 1.33-8 4v2h16v-2c0-2.67-5.33-4-8-4m-9-4V7H4v3H1v2h3v3h2v-3h3v-2m6 2a4 4 0 0 0 4-4a4 4 0 0 0-4-4a4 4 0 0 0-4 4a4 4 0 0 0 4 4Z"/></svg>
+          <span class="link-text">Register</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="1st-section" class="first-section">
+
+      <div class="first-section-left">
+
+          <h2 class="hidden-left">
+              Welcome to Robo-Fiesta
+          </h2>
+
+          <h4 class="hidden-left">
+              A platform for all the robotics enthusiasts to showcase their skills and learn from the best.
+          </h4>
+
+      </div>
+
+      <div class="first-section-right">
+        <video autoplay="false" muted="true" loop="true" class="back-video" >
+          <source src="/assets/img/robo-video.mp4" type="video/mp4">
+        </video>
+      </div>
+  </section>
+
+
+  <section class="second-section">
+
+      <div class="second-section-left">
+
+      </div>
+
+      <div class="second-section-right">
+
+          <h2 id="2nd-section" class="hidden-right">
+              About Us
+          </h2>
+
+
+          <h4 class="hidden-right">
+            Welcome to Robo-Fiesta, the premier event for robotics enthusiasts and professionals alike. This festival celebrates the latest advancements in robotics technology, bringing together the brightest minds in the field to showcase their creations, share their insights, and inspire future innovation.
+            
+          </h4>
+
+          <h4 class="hidden-right">
+            Our event features a wide range of activities, including robot competitions, technology exhibits, keynote speakers, and networking opportunities. With a diverse lineup of exhibitors and presenters, Robo-Fiesta is the perfect platform for showcasing your latest innovations, discovering new trends and techniques, and expanding your professional network.
+            
+            Join us at Robo-Fiesta and be a part of the exciting future of robotics technology. With our unparalleled access to the latest advancements in the field, you'll gain the knowledge, inspiration, and connections you need to take your robotics projects to the next level.
+          </h4>
+
+      </div>
+
+  </section>
+
+  <!-- <section class="third-section">
+
+      <div class="third-section-left">
+
+          <h2 class="hidden-left">
+              Lorem ipsum
+          </h2>
+
+
+          <h4 class="hidden-left">
+              lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl nec ultricies lacinia, nisl
+              nisl
+          </h4>
+
+          <h4 class="hidden-left">
+              lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl nec ultricies lacinia, nisl
+              nisl
+
+          </h4>
+
+
+      </div>
+
+      <div class="third-section-right">
+      </div>
+
+
+
+
+  </section>
+
+
+  <section class="fourth-section">
+
+      <div class="fourth-section-left">
+
+
+
+      </div>
+
+      <div class="fourth-section-right">
+
+
+          <h2 class="hidden-right">
+              Lorem ipsum
+          </h2>
+
+          <h4 class="hidden-right">
+              lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl nec ultricies lacinia, nisl
+              nisl
+          </h4>
+
+          <h4 class="hidden-right">
+              lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl nec ultricies lacinia, nisl
+              nisl
+
+          </h4>
+      </div>
+
+
+  </section> -->
+  </main>
+
+</body>
+
+</html>
